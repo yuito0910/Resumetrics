@@ -1,4 +1,4 @@
-# Resume Matcher Backend
+# Resumetrics
 
 This project is a backend application for matching resumes using FastAPI. It provides an API for uploading resumes and matching them against job descriptions.
 
