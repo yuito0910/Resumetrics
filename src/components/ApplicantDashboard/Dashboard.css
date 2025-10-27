@@ -1,0 +1,438 @@
+/* Applicant Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 230px;
+  background-color: #2B2D42;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push footer to bottom */
+  overflow: hidden; /* Prevent sidebar from scrolling */
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar-space{
+ min-height: 600px;
+
+}
+
+/* Sidebar links */
+.sidebar ul li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #cfd8dc;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #c6d6e9;
+  color: #ffffff;
+}
+
+/* Active link style for HR */
+.sidebar ul li a.active-link {
+  background-color: #ffffff;
+  color: #0d47a1; /* slightly different blue for HR */
+  font-weight: bold;
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 300px;
+  flex: 1;
+  background: #ffffff;
+  
+}
+
+.header {
+  background: white;
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.page-content {
+  justify-content: center;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.page-content ul {
+  list-style-type: disc;       /* solid bullets */
+  padding-left: 20px;          /* indent bullets */
+  margin-bottom: 1rem;
+}
+
+.page-content li {
+  margin-bottom: 0.5rem;
+}
+
+
+/* Sidebar header with logo */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+.topbar-space{
+  width: 1000px;         /* creates horizontal blank space */
+  height: 1px;           /* optional: keeps it minimal */
+  display: inline-block; /* ensures it behaves like a horizontal spacer */
+}
+/* Search bar */
+.search-container {
+  position: relative;
+  justify-content: center;
+   flex: 0 0 auto;           /* don’t auto-grow or shrink */
+  width: 100%;         
+  max-width: 650px;         
+  margin: 0 auto;  
+}
+
+.search-container input {
+  background-color: #F5F5F5;
+  height: 30px;
+  width: 100%;
+  padding: 8px 12px 8px 40px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-container .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #888;
+}
+
+/* Right side of topbar */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification .dot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  height: 8px;
+  width: 8px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  width: 280px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.notification-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notification-dropdown li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.notification-dropdown li:hover {
+  background-color: #f9f9f9;
+}
+
+.notification-dropdown li:last-child {
+  border-bottom: none;
+}
+
+.note-message {
+  flex: 1;
+  color: #333;
+}
+
+.note-time {
+  font-size: 0.75rem;
+  color: #999;
+  margin-left: 1rem;
+}
+
+
+.hr-id {
+  font-weight: 500;
+}
+
+.user-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Default link */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  color: #ccc;
+  text-decoration: none;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover state */
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Active state with left border */
+.active-link {
+  border-left: 4px solid #007bff;
+  color: #007bff;
+  font-weight: bold;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/*APDashboardHome*/
+/*Suggested Job Listings */
+.suggested-job-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 24px;
+}
+
+.suggested-job-card {
+  color: white;
+  flex: 0 0 calc(50% - 8px); /* two cards per row with gap */
+  max-width: calc(50% - 8px);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #2B2D42;
+  margin-bottom: 5px;
+}
+
+.suggested-job-card:hover {
+  background-color: #1f1f2e;
+}
+
+.suggested-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.icon-box {
+  width: 48px;
+  height: 48px;
+  border: 2px solid #2B2D42;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.icon-box i {
+  font-size: 1.4rem;
+  color: #2B2D42;
+}
+
+.job-info {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* aligns text to the left */
+}
+.job-description {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.job-meta {
+  font-size: 0.85rem;
+  color: #303030;
+  margin-top: 2px;
+}
+.apply-btn,
+.save-btn {
+  margin-right: 8px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.apply-btn {
+  background-color: #2B2D42;
+  color: white;
+}
+
+.save-btn {
+  background-color: #D1D4EB;
+  color: #333;
+}
+/* Saved Job Listings */
+.job-container {
+  display: flex;
+  flex-direction: column; 
+  padding: 16px 24px;
+}
+
+.job-card {
+  display: flex;
+  justify-content: space-between; /* pushes left and right apart */
+  align-items: center;
+  padding: 30px 50px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+/*Upload page */
+
+
+
+/* Headings and Subtext */
+.account-heading {
+  font-size: 1.8rem;
+  color: #2B2D42;
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+
+.account-subtext {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  color: #2B2D42;
+  margin: 2rem 0 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* Form Styling */
+.account-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.account-form label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.account-form input {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0.65rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #F5F5F5;
+  color: #333;
+  outline: none;
+}
+
+.btn-dark2 {
+  width: 150px;               /* Smaller fixed width */
+  margin: 1.5rem auto 0 auto; /* Center horizontally */
+  padding: 0.75rem 1rem;
+  background-color: #2B2D42;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .account-card1,
+  .account-card2 {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
